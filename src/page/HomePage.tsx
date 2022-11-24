@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
 import { useSearchUsersQuery, useLazyGetUserReposQuery } from "../store/github/github.api"
-import { useDebounce } from './../hooks/debounce';
-import RepoCart from './../components/RepoCart';
-
+import { useDebounce } from './../hooks/debounce'
+import RepoCart from './../components/RepoCart'
 
 const HomePage = () => {
   const [search, setSearch] = useState('')
@@ -23,8 +22,9 @@ const HomePage = () => {
     fetchRepos(username)
     setDropdown(false)
   }
+  
   return (
-    <div className=" flex justify-center pt-10 mx-auto h-screen w-screen">
+    <div className="flex justify-center pt-10 mx-auto h-screen w-screen">
       {isError && <p className="text-center text-red-500">Somthing error...</p>}
       <div className="reletive w-[560px]">
         <input
@@ -37,13 +37,13 @@ const HomePage = () => {
           {isLoading && <p className="text-center">Loading...</p>}
           {data?.map(user => (
             <li onClick={() => clickHandler(user.login)} key={user.id}
-              className='py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer'>
+              className="py-2 px-4 hover:bg-gray-500 hover:text-white transition-colors cursor-pointer">
               {user.login}
             </li>))}
         </ul>}
         <div className="container">
           {areReposLoading && <p className="text-center"> Repos are loading</p>}
-          {repos?.map(repo => <RepoCart repo={repo} key={repo.id}/>)}
+          {repos?.map(repo => <RepoCart repo={repo} key={repo.id} />)}
         </div>
       </div>
     </div>
