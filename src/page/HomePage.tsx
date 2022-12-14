@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect, useState } from "react"
 import { useSearchUsersQuery, useLazyGetUserReposQuery } from "../store/github/github.api"
 import { useDebounce } from './../hooks/debounce'

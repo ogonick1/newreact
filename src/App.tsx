@@ -1,3 +1,4 @@
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Favorites from './page/FavoritesPage'
 import HomePage from './page/HomePage'
